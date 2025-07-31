@@ -1,60 +1,68 @@
 
-  body {
-    background-color: rgb(247, 66, 66);
-    font-family:Arial, Helvetica;
-    max-width: 500px;
-    margin: 40px auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 10px;
-  
-  }
+ /* Define uma fonte padrão e centraliza o conteúdo */
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        padding: 0 10px;
+        background-color: rgb(150, 150, 150);
+      }
 
-   main {
+      main {
         width: 100%;
         max-width: 500px;
-        padding: 0 15px;
-        box-sizing: border-box;
+        margin: 40px auto;
       }
-      
-  h1 {
-    text-align: center;
-    background-color: #e0e0e0;
-    padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-  } 
 
-  ul {
-    padding-left: 0;
-  }
+      /* Estilo do título com caixa ao redor */
+      h1 {
+        text-align: center;
+        background-color: #e0e0e0;
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
 
-  li {
-    display: flex;
-    justify-content: space-between; 
-    margin-bottom: 8px;
-    background-color: #fa2929;
-    padding: 8px;
-    border-radius: 5px;
-    flex-wrap: wrap;
-  }
+      /* Remove os recuos padrão da lista */
+      ul {
+        padding-left: 0;
+        background-color: rgb(75, 75, 75);
+      }
 
-  input[type="text"] {
-    width: 100%;
-    padding: 6px;
-    margin-bottom: 10px;
-  }
+      /* Estilo de cada item da lista */
+      li {
+        display: flex;
+        justify-content: space-between; /* Espaço entre texto e botão */
+        margin-bottom: 8px;
+        background-color: #f0f0f0;
+        padding: 8px;
+        border-radius: 5px;
+        flex-wrap: wrap;
+      }
 
-  
-  button {
-    padding: 6px 10px;
-    margin-left: 8px;
-    width: 100%;
-  }
+      /* Agrupa input e botão com espaçamento */
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
 
- @media (min-width: 600px) {
+      /* Estilo do campo de texto e campo de busca */
+      input[type="text"],
+      #searchInput,
+      button {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 6px;
+      }
+
+      /* Responsividade para telas maiores */
+      @media (min-width: 600px) {
+        form {
+          flex-direction: row;
+        }
+
         input[type="text"] {
           width: 70%;
           margin-bottom: 0;
@@ -64,5 +72,9 @@
           width: auto;
           margin-left: 8px;
         }
-      
+
+        #searchInput {
+          width: 100%;
+          margin-bottom: 20px;
+        }
       }
