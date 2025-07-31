@@ -42,15 +42,8 @@ const removeTask = (indexToRemove) => {
   renderTasks(searchInput.value);
 };
 
-
-
-
-
-
-
-
-
-
-
+searchInput.addEventListener("input", () => {
+  renderTasks(searchInput.value);
+});
 
   renderTasks();
