@@ -19,7 +19,30 @@ const addTask = (event) => {
 taskForm.addEventListener("submit", addTask);
 
 const renderTasks = (filter = "") => {
-  taskList.innerHTML = ""; }
+  taskList.innerHTML = "";
+
+  tasks
+  .filter(task => task.toLowerCase().includes(filter.toLowerCase()))
+  .forEach((task, index) => {
+    const li = document.createElement("li");
+    li.textContent = task;
+
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remover";
+    removeBtn.onclick = () => removeTask(index);
+
+    li.appendChild(removeBtn);
+    taskList.appendChild(li);
+  });
+}
+
+const removeTask = (indexToRemove) => {
+  tasks = tasks.filter((_, index) => index !== indexToRemove);
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+  renderTasks(searchInput.value);
+};
+
+
 
 
 
