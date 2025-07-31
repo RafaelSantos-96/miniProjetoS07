@@ -14,4 +14,5 @@ const addTask = (event) => {
   }
 };
 
+taskForm.addEventListener("submit", addTask);
 
