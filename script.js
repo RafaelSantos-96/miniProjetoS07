@@ -1,0 +1,17 @@
+const taskForm = document.getElementById("taskForm");
+const taskInput = document.getElementById("taskInput");
+const taskList = document.getElementById("taskList");
+const searchInput = document.getElementById("searchInput");
+
+const addTask = (event) => {
+  event.preventDefault();
+  const newTask = taskInput.value.trim();
+  if (newTask) {
+    tasks.push(newTask);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    taskInput.value = "";
+    renderTasks(searchInput.value);
+  }
+};
+
+
