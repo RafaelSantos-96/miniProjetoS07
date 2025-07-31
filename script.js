@@ -18,4 +18,16 @@ const addTask = (event) => {
 
 taskForm.addEventListener("submit", addTask);
 
-renderTasks();
+const renderTasks = (filter = "") => {
+  taskList.innerHTML = ""; }
+
+
+
+
+
+
+
+
+
+
+  renderTasks();
